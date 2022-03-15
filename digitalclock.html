@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="display-1 text-center text-primary">13th March 2022</div>
+    <div class="display-4 text-center">
+        Digital Clock      
+    </div>
+
+    <div class="text-center display-1">
+        <span id="hr" class=" text-format-bold"></span>   :
+        <span id="min" class=" text-format-bold"></span>  :
+        <span id="sec" class="  text-format-bold"></span> 
+        <span id="ampm" class="  text-format-bold"></span> 
+    </div>
+
+    <script>
+        function update()
+        {
+            hr=document.getElementById("hr");
+            min=document.getElementById("min");
+            sec=document.getElementById("sec");
+            date=new Date();
+            hr2= date.getHours();
+            if(hr2>12) hr2=hr2-12
+            hr.innerHTML = hr2;
+            min.innerHTML= date.getMinutes();
+            sec2= date.getSeconds();
+            if(sec2<=9) sec2= "0" + sec2
+            sec.innerHTML = sec2
+        }
+
+setInterval(update,1000);
+    </script>
+</body>
+</html>

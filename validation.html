@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="display-1 text-center text-primary">13th March 2022</div>
+    <div class="display-4 text-center text-warning">
+        Validation      
+    </div>
+    <form  class="col-6 mx-auto mt-3" >
+        <span class="text-danger font-weight-bold" id="name"></span>
+        <input type="text" class="form-control mb-2" placeholder="Name" onkeypress="check()" >
+        
+        <span class="text-danger font-weight-bold" id="pass"></span>
+        <input type="text" class="form-control mb-2" placeholder="Password" onkeypress="check()">
+
+        <input type="submit" class="btn btn-success" value="submit" onclick="check()">
+
+    </form>
+
+
+    <script>
+        var nameregex = /^[a-zA-Z ]+$/;
+
+        function check()
+        {
+            if(!(nameregex.test(document.getElementById("name").value)))
+            {
+               document.getElementById("name").innerHTML="Wrong"
+            }
+            else
+            {
+                document.getElementById("name").innerHTML="Correct"
+            }
+        }
+    </script>
+</body>
+</html>
